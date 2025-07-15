@@ -1,26 +1,39 @@
-# 🧪 K6 Dummy API Performance Tests – automationexercise.com
+# 🧪 K6 Dummy API Performance Test
 
-Repository ini berisi skrip performance dan stress test menggunakan [k6](https://k6.io/) untuk menguji endpoint dummy API yang tersedia di [https://automationexercise.com](https://automationexercise.com).
-
----
-
-## 📁 Struktur Folder
-
-- `k6/` → Folder utama untuk semua skrip pengujian
-  - `get-user-by-email.js` → Menguji endpoint GET user by email
-  - `get-all-brands-list.js` → Menguji endpoint daftar merek
-  - `run-all-tests.sh` → Menjalankan semua tes sekaligus, menghasilkan report HTML
-- `reports/` → Folder tempat file `.json` dan `.html` hasil tes disimpan (tidak dipush ke GitHub)
-- `.github/workflows/k6.yml` → File konfigurasi GitHub Actions (CI)
+Repo ini berisi skrip pengujian performa API menggunakan [K6](https://k6.io/), 
+yang ditujukan untuk dummy API dari (https://automationexercise.com).
 
 ---
 
-## 🚀 Cara Menjalankan Tes Secara Lokal
+## 📥 Instalasi K6
 
-### ✅ 1. Pastikan sudah menginstal:
+### Untuk Mac (Homebrew)
+-Bash
+brew install k6
 
-- `k6`: [cara instal](https://k6.io/docs/getting-started/installation/)
-- `k6-reporter`: plugin untuk export hasil jadi HTML
+## Untuk Windows (via Chocolatey)
+-Bash
+choco install k6
 
-```bash
-npm install -g k6-reporter
+## Untuk Windows (via VisualCode)
+-Bash
+Npm Install K6
+
+
+## Untuk Linux (Ubuntu/Debian)
+-Bash
+sudo apt update
+sudo apt install gnupg ca-certificates
+curl -s https://packagecloud.io/install/repositories/loadimpact/k6/script.deb.sh | sudo bash
+sudo apt install k6
+
+
+Contoh Menjalankan 1 File Test
+-Bash
+k6 run k6/get-user-by-email.js
+
+Note: 
+
+- Tidak diperlukan konfigurasi tambahan untuk menjalankan skrip.
+- Untuk melihat hasil lebih detail, K6 akan mencetak ringkasan (summary) langsung di terminal.
+- Tidak menghasilkan file HTML atau JSON, hanya output CLI (Command Line Interface).
